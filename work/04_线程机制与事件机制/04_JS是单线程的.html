@@ -25,6 +25,30 @@
   * 后面在某个时刻才会执行回调代码
 -->
 <script type="text/javascript">
+
+  function fn1() {
+    console.log('fn1()')
+  }
+  fn1()
+
+  setTimeout(function () {
+    console.log('22222')
+  }, 2000)
+  setTimeout(function () {
+    console.log('00000')
+  }, 0)
+
+  setTimeout(function () {
+    console.log('11111')
+    alert('-------')
+  }, 1000)
+
+  console.log('alert之前')
+  alert('+++++++') // 让当前主线程暂停执行和计时, 点确定后继续向下执行并重启计时
+  console.log('alert之后')
+
+
+
 </script>
 </body>
 </html>

@@ -12,6 +12,31 @@
   * 问题: 对象没有一个具体的类型, 都是Object类型
 -->
 <script type="text/javascript">
+  function createPerson(name, age) {// 工厂函数
+    var p = {
+      name,
+      age,
+      setName (name) {
+        this.name = name
+      }
+    }
+    return p
+  }
+
+  var p1 = createPerson('Tom', 12)
+  var p2 = createPerson('Jack', 13)
+
+  function createDog(name) {
+    var dog = {
+      name
+    }
+
+    return dog
+  }
+  var dog1 = createDog('SADAMU')
+  var dog2 = createDog('SADAMU2')
+  // p1与dog1类型能不能区别? 不能
+
 </script>
 </body>
 </html>

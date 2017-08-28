@@ -14,6 +14,22 @@
 -->
 <script type="text/javascript">
 
+  function Person(name, age) {
+    this.name = name
+    this.age = age
+    this.setAge = function (age) {
+      this.age = age
+    }
+  }
+
+  function Dog(name) {
+
+  }
+  var p1 = new Person('Tom', 12)
+  var p2 = new Person('Jack', 13)
+
+  var dog = new Dog('Tom')
+
 </script>
 </body>
 </html>

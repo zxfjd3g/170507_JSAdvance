@@ -21,7 +21,20 @@
   * 只有当初始化代码执行完后(可能要一定时间), 才会遍历读取回调队列中的回调函数执行
 -->
 <script type="text/javascript">
-
+  function fn() {
+    console.log('fn()')
+  }
+  fn()
+  setTimeout(function () {
+    console.log('2222222')
+  }, 2000)
+  document.getElementById('btn').onclick = function () {
+    console.log('点击了')
+  }
+  function fn2() {
+    console.log('fn2()')
+  }
+  fn2()
 </script>
 </body>
 </html>

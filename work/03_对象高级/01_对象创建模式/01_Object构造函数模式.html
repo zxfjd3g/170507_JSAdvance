@@ -15,6 +15,19 @@
   /*
   一个人: name:"Tom", age: 12
    */
+  var p = new Object()
+
+  // 做一些事件来确定数据值
+  p.name = 'Tom'
+  p.age = 12
+  p.setName = function (name) {
+    this.name = name
+  }
+
+  //测试
+  console.log(p.name, p.age)
+  p.setName('Jack')
+  console.log(p.name, p.age)
 
 </script>
 </body>
