@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_相关问题</title>
+</head>
+<body>
+<!--
+问题: 什么时候必须使用['属性名']的方式?
+  * 属性名不是合法的标识名
+  * 属性名不确定
+-->
+<script type="text/javascript">
+  var obj = {}
+  // 保存一个属性: content-type : 'text/json'
+  obj['content-type'] = 'text/json'
+  // 保存一个属性名不确定的属性
+  var users = {}  // key: phone, value: code
+  var phone = '123123'
+  var code = '234234'
+  users[phone] = code
+
+  phone = '123321'
+  code = '234233'
+  users[phone] = code
+
+</script>
+</body>
+</html>

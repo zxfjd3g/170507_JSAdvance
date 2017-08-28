@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_原型链</title>
+</head>
+<body>
+<!--
+1. 原型链(图解)
+  * 访问一个对象的属性时，
+    * 先在自身属性中查找，找到返回
+    * 如果没有, 再沿着__proto__这条链向上查找, 找到返回
+    * 如果最终没找到, 返回undefined
+  * 别名: 隐式原型链
+  * 作用: 查找对象的属性(方法)
+2. 构造函数/原型/实体对象的关系(图解)
+3. 构造函数/原型/实体对象的关系2(图解)
+-->
+<script type="text/javascript">
+  console.log(Object.prototype)
+  function Fn() {  // 内部执行: Fn.prototType = {}
+    this.test1 = function () {
+      console.log('test1()')
+    }
+  }
+  console.log(Fn.prototype)
+  console.log(Date.prototype)
+  Fn.prototype.test2 = function () {
+    console.log('test2()')
+  }
+  var fn = new Fn() // 内部执行: this.__proto__ = Fn.prototype
+
+  fn.test1()
+  fn.test2()
+  console.log(fn.toString())
+  fn.test3()
+
+  // 查找对象的属性: 先在自身上查找, 如果找到沿着原型链查找, 找不到返回undefined
+
+  /*
+  1. prototype属性什么时候产生的?, 值为多少?, 什么时候被使用?
+    执行函数定义(创建函数对象), 值默认为一个{}, 创建对应实例对象时被使用
+  2. __proto__属性是什么时候产生的?, 值为多少?, 什么时候被使用?
+    创建实例对象时产生, 值为对应的构造函数prototype属性值, 当查找对象属性时全用到
+   */
+</script>
+</body>
+</html>

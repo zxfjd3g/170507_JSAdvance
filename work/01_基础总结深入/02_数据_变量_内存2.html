@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>关于赋值和内存的问题</title>
+</head>
+<body>
+<!--
+  问题: var a = xxx, a内存中到底保存的是什么?
+  * xxx是一个基本数据
+  * xxx是一个对象
+  * xxx是一个变量(基本/引用)
+-->
+<script type="text/javascript">
+  var a = 'abc'  // 'abc'
+  a = {} // {}的地址值
+  var b = 3
+  a = b // 3
+  b = []
+  a = b // []的地址值
+</script>
+</body>
+</html>
